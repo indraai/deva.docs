@@ -32,7 +32,7 @@ const DOCS = new Deva({
         const docArr = opts.q.text ? opts.q.text.split(':') : [];
         const part = docArr[1] ? docArr[1].toUpperCase() : this.vars.part;
         const fDoc = docArr.length ? docArr[0] + '.feecting' : 'main.feecting';
-        const fDocs = path.join(__dirname, '..', '..', 'docs');
+        const fDocs = path.join(this.config.dir, 'docs');
         const fPath = path.join(fDocs, fDoc);
         try {
           let doc = fs.readFileSync(fPath, 'utf8');
