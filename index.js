@@ -105,7 +105,9 @@ const DOCS = new Deva({
             html:parsed.a.html,
             data:parsed.a.data,
           });
-        }).catch(reject);
+        }).catch(err => {
+          return this.error(err, packet, reject);
+        });
       });
     }
   },
