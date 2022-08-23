@@ -1,4 +1,6 @@
 // Copyright (c)2022 Quinn Michaels
+// The Docs Deva
+
 const fs = require('fs');
 const path = require('path');
 
@@ -27,6 +29,14 @@ const DOCS = new Deva({
   modules: {},
   deva: {},
   func: {
+
+    /**************
+    func: view
+    params: opts
+    describe: The view function parses the text parameter to prdoce the string
+    which calls the correct document file then passes it to the feecting deva
+    for parsing.
+    ***************/
     view(opts) {
       return new Promise((resolve, reject) => {
         const docArr = opts.q.text ? opts.q.text.split(':') : [];
@@ -52,15 +62,39 @@ const DOCS = new Deva({
     },
   },
   methods: {
+    /**************
+    method: view
+    params: packet
+    describe: The view method replays the request to the view function to return
+    a document from the text parameter.
+    ***************/
     view(packet) {
       return this.func.view(packet);
     },
+
+    /**************
+    method: uid
+    params: packet
+    describe: Generaate a uid from the unique id generator
+    ***************/
     uid(packet) {
-      return Promise.resolve(this.uid());
+      return Promise.resolve({text:this.uid()});
     },
+
+    /**************
+    method: status
+    params: packeet
+    describe: The status method returns the status of the Docs Deva.
+    ***************/
     status(packet) {
       return this.status();
     },
+
+    /**************
+    method: help
+    params: packet
+    describe: Call the docs deva help files then pass to feecting for parsing.
+    ***************/
     help(packet) {
       return new Promise((resolve, reject) => {
         this.lib.help(packet.q.text, __dirname).then(text => {
