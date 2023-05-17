@@ -1,6 +1,6 @@
 {
   "name": "@indra.ai/docsdeva",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "The Docs Deva",
   "main": "index.js",
   "scripts": {
