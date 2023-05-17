@@ -1,4 +1,4 @@
-// Copyright (c)2022 Quinn Michaels
+// Copyright (c)2023 Quinn Michaels
 // The Docs Deva
 
 const fs = require('fs');
