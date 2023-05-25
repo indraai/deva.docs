@@ -6,8 +6,6 @@
     "agent": {
       "id": 3299095637720,
       "key": "docs",
-      "name": "Docs Deva",
-      "describe": "The Deva for reading DOCS",
       "prompt": {
         "emoji": "🧻",
         "text": "docs",
@@ -29,10 +27,11 @@
         "speed": 1
       },
       "profile": {
+        "name": "Docs Deva",
+        "describe": "The Deva for reading DOCS",
         "emoji": "/public/devas/docs/emoji.png",
         "avatar": "/public/devas/docs/avatar.png",
         "background": "/public/devas/docs/background.jpg",
-        "describe": "The Deva for reading DOCS",
         "gender": "M"
       }
     },
