@@ -3,6 +3,19 @@
 
 const fs = require('fs');
 const path = require('path');
+const package = require('./package.json');
+const info = {
+  id: package.id,
+  name: package.name,
+  describe: package.description,
+  version: package.version,
+  url: package.homepage,
+  git: package.repository.url,
+  bugs: package.bugs.url,
+  author: package.author,
+  license: package.license,
+  copyright: package.copyright,
+};
 
 const data_path = path.join(__dirname, 'data.json');
 const {agent,vars} = require(data_path).data;
@@ -12,8 +25,6 @@ const DOCS = new Deva({
   agent: {
     id: agent.id,
     key: agent.key,
-    name: agent.name,
-    describe: agent.describe,
     prompt: agent.prompt,
     voice: agent.voice,
     profile: agent.profile,
