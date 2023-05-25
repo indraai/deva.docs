@@ -22,6 +22,7 @@ const {agent,vars} = require(data_path).data;
 
 const Deva = require('@indra.ai/deva');
 const DOCS = new Deva({
+  info,
   agent: {
     id: agent.id,
     key: agent.key,
