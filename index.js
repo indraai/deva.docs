@@ -103,6 +103,7 @@ const DOCS = new Deva({
         } catch (e) {
           return this.error(e, packet, reject);
         }
+      });
     },
 
     /**************
