@@ -98,7 +98,7 @@ const DOCS = new Deva({
       const agent = this.agent();
       return new Promise((resolve, reject) => {
         try {
-          const text = this.func.get(packet.q.text);
+          const text = this.func.doc(packet.q.text);
           return resolve({text})
         } catch (e) {
           return this.error(e, packet, reject);
