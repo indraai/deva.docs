@@ -116,6 +116,8 @@ const DOCS = new Deva({
       const agent = this.agent();
       const data = {}, text = [];
 
+      const send = packet.q.meta.params[1] || this.vars.send;
+
       return new Promise((resolve, reject) => {
         this.context(this.vars.context.send_get);
         this.question(`#docs view ${packet.q.text}`).then(doc => {
@@ -132,13 +134,13 @@ const DOCS = new Deva({
         }).then(feecting => {
           data.feecting = feecting.a.data;
           this.context(this.vars.context.send_relay);
-          return this.question(`#puppet relay ${feecting.a.text}`);
+          return this.question(`#${send} relay ${feecting.a.text}`);
         }).then(relay => {
           data.relay = relay.a.data
           this.context(this.vars.context.send_done);
           return resolve({
-            text: feecting.a.text,
-            htaml: feecting.a.html,
+            text: relay.a.text,
+            htaml: relay.a.html,
             data,
           });
         }).catch(err => {

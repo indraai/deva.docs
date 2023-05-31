@@ -46,6 +46,7 @@
         "error": "💣 ERROR!"
       },
       "part": "MAIN",
+      "send": "open",
       "context": {
         "send": "📜 Docs Deva is preparing #docs",
         "send_get": "🦄 Docs Deva is getting #docs",
