@@ -107,6 +107,48 @@ const DOCS = new Deva({
     },
 
     /**************
+    method: send
+    params: packet
+    describe: send a doc to another deva.
+    ***************/
+    send(packet) {
+      this.context(this.vars.context.send);
+      const agent = this.agent();
+      const data = {}, text = [];
+
+      return new Promise((resolve, reject) => {
+        this.context(this.vars.context.send_get);
+        this.question(`#docs view ${packet.q.text}`).then(doc => {
+          this.context(this.vars.context.send_format);
+          const theDoc = [
+            this.vars.messages.document,
+            `::BEGIN:DOC:${packet.id}`,
+            doc.a.text,
+            `::END:DOC:${this.hash(doc.a.text)}`,
+          ].join('\n');
+          text.push(theDoc);
+          this.context(this.vars.context.send_feecting);
+          return this.question(`#feecting parse:${agent.key} ${text.join('\n')}`);
+        }).then(feecting => {
+          data.feecting = feecting.a.data;
+          this.context(this.vars.context.send_relay);
+          return this.question(`#puppet relay ${feecting.a.text}`);
+        }).then(relay => {
+          data.relay = relay.a.data
+          this.context(this.vars.context.send_done);
+          return resolve({
+            text: feecting.a.text,
+            htaml: feecting.a.html,
+            data,
+          });
+        }).catch(err => {
+          return this.error(err, packet, reject);
+        });
+      });
+    },
+
+
+    /**************
     method: uid
     params: packet
     describe: Generaate a uid from the unique id generator
