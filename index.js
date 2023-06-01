@@ -127,12 +127,12 @@ const DOCS = new Deva({
           data.feecting = feecting.a.data;
           this.context('send_relay');
           return this.question(`#${send} chat ${feecting.a.text}`);
-        }).then(relay => {
-          data.relay = relay.a.data
+        }).then(chat => {
+          data.chat = chat.a.data
           this.context('send_done');
           return resolve({
-            text: relay.a.text,
-            htaml: relay.a.html,
+            text: chat.a.text,
+            htaml: chat.a.html,
             data,
           });
         }).catch(err => {
