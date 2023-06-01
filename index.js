@@ -160,7 +160,7 @@ const DOCS = new Deva({
     ***************/
     uid(packet) {
       this.context('uid');
-      return Promise.resolve({this.uid());
+      return Promise.resolve(this.uid());
     },
 
     /**************
