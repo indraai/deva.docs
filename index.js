@@ -27,7 +27,6 @@ const DOCS = new Deva({
     id: agent.id,
     key: agent.key,
     prompt: agent.prompt,
-    voice: agent.voice,
     profile: agent.profile,
     translate(input) {
       return input.trim();
@@ -73,6 +72,7 @@ const DOCS = new Deva({
     a document from the text parameter.
     ***************/
     view(packet) {
+      this.context('view');
       const agent = this.agent();
       return new Promise((resolve, reject) => {
         const doc = this.func.doc(packet.q.text);
@@ -95,6 +95,7 @@ const DOCS = new Deva({
     a document from the text parameter.
     ***************/
     raw(packet) {
+      this.context('raw')
       const agent = this.agent();
       return new Promise((resolve, reject) => {
         try {
@@ -158,7 +159,8 @@ const DOCS = new Deva({
     describe: Generaate a uid from the unique id generator
     ***************/
     uid(packet) {
-      return Promise.resolve({text:this.uid()});
+      this.context('uid');
+      return Promise.resolve({this.uid());
     },
 
     /**************
@@ -167,6 +169,7 @@ const DOCS = new Deva({
     describe: The status method returns the status of the Docs Deva.
     ***************/
     status(packet) {
+      this.context('status');
       return Promise.resolve(this.status());
     },
 
@@ -176,6 +179,7 @@ const DOCS = new Deva({
     describe: Call the docs deva help files then pass to feecting for parsing.
     ***************/
     help(packet) {
+      this.context('help');
       return new Promise((resolve, reject) => {
         this.lib.help(packet.q.text, __dirname).then(text => {
           return this.question(`#feecting parse:${this.agent.key} ${text}`);

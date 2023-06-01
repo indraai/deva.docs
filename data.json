@@ -22,17 +22,16 @@
           }
         }
       },
-      "voice": {
-        "speech": "Alex",
-        "speed": 1
-      },
       "profile": {
         "name": "Docs Deva",
         "describe": "The Deva for reading DOCS",
         "emoji": "/public/devas/docs/emoji.png",
         "avatar": "/public/devas/docs/avatar.png",
         "background": "/public/devas/docs/background.png",
-        "gender": "M"
+        "color": "#dae4e4",
+        "bgcolor": "#000000",
+        "gender": "M",
+        "voice": "Joey"
       }
     },
     "vars": {
@@ -48,6 +47,8 @@
       "part": "MAIN",
       "send": "open",
       "context": {
+        "view": "📄 Docs Deva is viewing #docs",
+        "raw": "🍣 Docs Deva is returning raw #docs",
         "send": "📜 Docs Deva is preparing #docs",
         "send_get": "🦄 Docs Deva is getting #docs",
         "send_relay": "🗣️ Docs Deva relaying #docs",
