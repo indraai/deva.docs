@@ -1,6 +1,5 @@
 // Copyright (c)2023 Quinn Michaels
 // The Docs Deva
-
 const fs = require('fs');
 const path = require('path');
 const package = require('./package.json');
@@ -16,10 +15,8 @@ const info = {
   license: package.license,
   copyright: package.copyright,
 };
-
 const data_path = path.join(__dirname, 'data.json');
 const {agent,vars} = require(data_path).data;
-
 const Deva = require('@indra.ai/deva');
 const DOCS = new Deva({
   info,
@@ -40,7 +37,6 @@ const DOCS = new Deva({
   modules: {},
   deva: {},
   func: {
-
     /**************
     func: view
     params: opts
@@ -169,7 +165,6 @@ const DOCS = new Deva({
       this.context('status');
       return Promise.resolve(this.status());
     },
-
     /**************
     method: help
     params: packet
