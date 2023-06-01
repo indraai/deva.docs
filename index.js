@@ -151,8 +151,6 @@ const DOCS = new Deva({
         });
       });
     },
-
-
     /**************
     method: uid
     params: packet
@@ -162,7 +160,6 @@ const DOCS = new Deva({
       this.context('uid');
       return Promise.resolve(this.uid());
     },
-
     /**************
     method: status
     params: packeet
