@@ -50,7 +50,6 @@
       "context": {
         "send": "📜 Docs Deva is preparing #docs",
         "send_get": "🦄 Docs Deva is getting #docs",
-        "send_format": "ℹ Docs Deva formatting #docs",
         "send_relay": "🗣️ Docs Deva relaying #docs",
         "send_feecting": "🤙 Docs Deva asking #feecting to parse #docs",
         "send_done": "✅ Docs Deva is done sending #docs"

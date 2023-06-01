@@ -112,32 +112,24 @@ const DOCS = new Deva({
     describe: send a doc to another deva.
     ***************/
     send(packet) {
-      this.context(this.vars.context.send);
+      this.context('send');
       const agent = this.agent();
       const data = {}, text = [];
 
-      const send = packet.q.meta.params[1] || this.vars.send;
+      const send = packet.q.meta.params[1];
 
       return new Promise((resolve, reject) => {
-        this.context(this.vars.context.send_get);
-        this.question(`#docs view ${packet.q.text}`).then(doc => {
-          this.context(this.vars.context.send_format);
-          const theDoc = [
-            this.vars.messages.document,
-            `::BEGIN:DOC:${packet.id}`,
-            doc.a.text,
-            `::END:DOC:${this.hash(doc.a.text)}`,
-          ].join('\n');
-          text.push(theDoc);
-          this.context(this.vars.context.send_feecting);
-          return this.question(`#feecting parse:${agent.key} ${text.join('\n')}`);
-        }).then(feecting => {
+        if (!send) return resolve(this._messages.notext);
+        this.context('send_get');
+        const theDoc = this.func.doc(packet.q.text);
+        this.context('send_feecting');
+        this.question(`#feecting parse ${theDoc}`).then(feecting => {
           data.feecting = feecting.a.data;
-          this.context(this.vars.context.send_relay);
-          return this.question(`#${send} relay ${feecting.a.text}`);
+          this.context('send_relay');
+          return this.question(`#${send} chat ${feecting.a.text}`);
         }).then(relay => {
           data.relay = relay.a.data
-          this.context(this.vars.context.send_done);
+          this.context('send_done');
           return resolve({
             text: relay.a.text,
             htaml: relay.a.html,
