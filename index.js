@@ -131,12 +131,9 @@ const DOCS = new Deva({
         }).then(relay => {
           data.relay = relay.a.data;
           const output = [
-            `::BEGIN:MAIN:${relay.id}`,
+            `::begin:${agent.key}:${relay.id}`,
             relay.a.text,
-            '',
-            '#color = var(--color-green)',
-            '#bgcolor = var(--color-darkest-grey)',
-            `::END:MAIN:${this.hash(relay.a.text)}`,
+            `::end:${agent.key}:${this.hash(relay.a.text)}`,
           ].join('\n');
           this.context('send_feecting');
           return this.question(`#feecting parse ${output}`)
