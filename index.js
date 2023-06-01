@@ -167,7 +167,7 @@ const DOCS = new Deva({
     describe: The status method returns the status of the Docs Deva.
     ***************/
     status(packet) {
-      return this.status();
+      return Promise.resolve(this.status());
     },
 
     /**************

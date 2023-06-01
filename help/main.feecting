@@ -1,15 +1,21 @@
-## DocsDEVA
+image: ::agent_avatar::
 
-p:Hello there... I am #DocsDEVA, and I manage documents for you. Everything is written in the .feecting format. So make sure to visit the #FeectingDEVA for information on how to write/speak in the #FEECTING language.
+## Docs Deva Help
 
-p:After you learn the basics of #FEECTING then you'll be ready to start writing some #DOCS. #DOCS is a common word in the system for #AGENTS...
+p: The Docs Deva manages all the #docs in deva.world.
+
+id: ::agent_id::
+key: #::agent_key::
+name: ::agent_name::
+emoji: ::agent_emoji::
+describe: ::agent_describe::
+
+p:Hello there... I am #DocsDEVA, and I manage documents for deva.world. Everything here is written in the #feecting format. So make sure to visit the #feecting help for information on how to write/speak #feecting.
+
+p:After you learn the basics of #feecting then you'll be ready to start writing some #DOCS. #DOCS is a common word in the system for #AGENTS...
 
 p:You'll observe them saying things like...
 
-> Got the #DOCS...
-> Where is the #DOCS...
-> Call the #DOCS...
-> Get the #DOCS...
 
 p:These are common phrasing among system users, so if you also observe it you now know what they are referring to.
 
@@ -23,5 +29,10 @@ p:Doing that will get you started into the #DOCS of the system. So if you haven'
 
 cmd:#docs view main
 
-#color = var(--color-black)
-#bgcolor = var(--color-white)
+-
+
+#color = ::agent_color::
+#bgcolor = ::agent_bgcolor::
+#bg = ::agent_background::
+
+copyright: (c)2023 Quinn Michaels

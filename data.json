@@ -7,7 +7,7 @@
       "id": 3299095637720,
       "key": "docs",
       "prompt": {
-        "emoji": "🧻",
+        "emoji": "📄",
         "text": "docs",
         "colors": {
           "label": {
@@ -31,7 +31,7 @@
         "describe": "The Deva for reading DOCS",
         "emoji": "/public/devas/docs/emoji.png",
         "avatar": "/public/devas/docs/avatar.png",
-        "background": "/public/devas/docs/background.jpg",
+        "background": "/public/devas/docs/background.png",
         "gender": "M"
       }
     },
