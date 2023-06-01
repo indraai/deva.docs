@@ -47,6 +47,9 @@
       "part": "MAIN",
       "send": "open",
       "context": {
+        "uid": "📄 Docs Deva is getting a uid",
+        "status": "📄 Docs Deva is getting the status",
+        "help": "📄 Docs Deva is getting help",
         "view": "📄 Docs Deva is viewing #docs",
         "raw": "🍣 Docs Deva is returning raw #docs",
         "send": "📜 Docs Deva is preparing #docs",
