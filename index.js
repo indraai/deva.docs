@@ -120,19 +120,32 @@ const DOCS = new Deva({
 
       return new Promise((resolve, reject) => {
         if (!send) return resolve(this._messages.notext);
+
         this.context('send_get');
         const theDoc = this.func.doc(packet.q.text);
         this.context('send_feecting');
         this.question(`#feecting parse ${theDoc}`).then(feecting => {
           data.feecting = feecting.a.data;
           this.context('send_relay');
-          return this.question(`#${send} chat ${feecting.a.text}`);
-        }).then(chat => {
-          data.chat = chat.a.data
+          return this.question(`#${send} relay ${feecting.a.text}`);
+        }).then(relay => {
+          data.relay = relay.a.data;
+          const output = [
+            `::BEGIN:MAIN:${relay.id}`,
+            relay.a.text,
+            '',
+            '#color = var(--color-green)',
+            '#bgcolor = var(--color-darkest-grey)',
+            `::END:MAIN:${this.hash(relay.a.text)}`,
+          ].join('\n');
+          this.context('send_feecting');
+          return this.question(`#feecting parse ${output}`)
+        }).then(parsed => {
+          data.parsed = parsed.a.data;
           this.context('send_done');
           return resolve({
-            text: chat.a.text,
-            htaml: chat.a.html,
+            text: parsed.a.text,
+            html: parsed.a.html,
             data,
           });
         }).catch(err => {
