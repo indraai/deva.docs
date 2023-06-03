@@ -47,16 +47,19 @@
       "part": "MAIN",
       "send": "open",
       "context": {
-        "uid": "Docs Deva is getting a uid",
-        "status": "Docs Deva is getting the status",
-        "help": "Docs Deva is getting help",
-        "view": "📄 Docs Deva is viewing #docs",
-        "raw": "🍣 Docs Deva is returning raw #docs",
-        "send": "📜 Docs Deva is preparing #docs",
-        "send_get": "🦄 Docs Deva is getting #docs",
-        "send_relay": "🗣️ Docs Deva relaying #docs",
-        "send_feecting": "🤙 Docs Deva asking #feecting to parse #docs",
-        "send_done": "✅ Docs Deva is done sending #docs"
+        "uid": "generating uid",
+        "status": "getting status",
+        "info": "getting info",
+        "feature": "accessing feature",
+        "issue": "has issues",
+        "help": "asking for help",
+        "view": "viewing docs",
+        "raw": "returning raw docs",
+        "send": "preparing docs",
+        "send_get": "getting #docs",
+        "send_relay": "relaying #docs",
+        "send_feecting": "parsing the feecting",
+        "send_done": "done sending docs"
       }
     }
   }
