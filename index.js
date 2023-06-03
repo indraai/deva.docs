@@ -8,6 +8,7 @@ const info = {
   name: package.name,
   describe: package.description,
   version: package.version,
+  dir: __dirname,
   url: package.homepage,
   git: package.repository.url,
   bugs: package.bugs.url,
@@ -20,22 +21,15 @@ const {agent,vars} = require(data_path).data;
 const Deva = require('@indra.ai/deva');
 const DOCS = new Deva({
   info,
-  agent: {
-    id: agent.id,
-    key: agent.key,
-    prompt: agent.prompt,
-    profile: agent.profile,
-    translate(input) {
-      return input.trim();
-    },
-    parse(input) {
-      return input.trim();
-    }
-  },
+  agent,
   vars,
+  utils: {
+    translate(input) {return input.trim();},
+    parse(input) {return input.trim();},
+    process(input) {return input.trim();},
+  },
   listeners: {},
   modules: {},
-  deva: {},
   func: {
     /**************
     func: view
@@ -102,90 +96,6 @@ const DOCS = new Deva({
         }
       });
     },
-
-    /**************
-    method: send
-    params: packet
-    describe: send a doc to another deva.
-    ***************/
-    send(packet) {
-      this.context('send');
-      const agent = this.agent();
-      const data = {}, text = [];
-
-      const send = packet.q.meta.params[1];
-
-      return new Promise((resolve, reject) => {
-        if (!send) return resolve(this._messages.notext);
-
-        this.context('send_get');
-        const theDoc = this.func.doc(packet.q.text);
-        this.context('send_feecting');
-        this.question(`#feecting parse ${theDoc}`).then(feecting => {
-          data.feecting = feecting.a.data;
-          this.context('send_relay');
-          return this.question(`#${send} relay ${feecting.a.text}`);
-        }).then(relay => {
-          data.relay = relay.a.data;
-          const output = [
-            `::begin:${agent.key}:${relay.id}`,
-            relay.a.text,
-            `::end:${agent.key}:${this.hash(relay.a.text)}`,
-          ].join('\n');
-          this.context('send_feecting');
-          return this.question(`#feecting parse ${output}`)
-        }).then(parsed => {
-          data.parsed = parsed.a.data;
-          this.context('send_done');
-          return resolve({
-            text: parsed.a.text,
-            html: parsed.a.html,
-            data,
-          });
-        }).catch(err => {
-          return this.error(err, packet, reject);
-        });
-      });
-    },
-    /**************
-    method: uid
-    params: packet
-    describe: Generaate a uid from the unique id generator
-    ***************/
-    uid(packet) {
-      this.context('uid');
-      return Promise.resolve(this.uid());
-    },
-    /**************
-    method: status
-    params: packeet
-    describe: The status method returns the status of the Docs Deva.
-    ***************/
-    status(packet) {
-      this.context('status');
-      return Promise.resolve(this.status());
-    },
-    /**************
-    method: help
-    params: packet
-    describe: Call the docs deva help files then pass to feecting for parsing.
-    ***************/
-    help(packet) {
-      this.context('help');
-      return new Promise((resolve, reject) => {
-        this.lib.help(packet.q.text, __dirname).then(text => {
-          return this.question(`#feecting parse:${this.agent.key} ${text}`);
-        }).then(parsed => {
-          return resolve({
-            text:parsed.a.text,
-            html:parsed.a.html,
-            data:parsed.a.data,
-          });
-        }).catch(err => {
-          return this.error(err, packet, reject);
-        });
-      });
-    }
   },
 });
 module.exports = DOCS

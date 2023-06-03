@@ -21,8 +21,8 @@
   "bugs": {
     "url": "https://github.com/indraai/DocsDeva/issues"
   },
-  "dependencies": {
-    "@indra.ai/deva": "^1.1.102"
-  },
-  "homepage": "https://github.com/indraai/DocsDeva#readme"
+  "homepage": "https://github.com/indraai/DocsDeva#readme",
+  "devDependencies": {
+    "@indra.ai/deva": "^1.1.117"
+  }
 }
