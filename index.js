@@ -1,7 +1,6 @@
 // Copyright (c)2023 Quinn Michaels
 // The Docs Deva
-const fs = require('fs');
-const path = require('path');
+const Deva = require('@indra.ai/deva');
 const package = require('./package.json');
 const info = {
   id: package.id,
@@ -16,9 +15,7 @@ const info = {
   license: package.license,
   copyright: package.copyright,
 };
-const data_path = path.join(__dirname, 'data.json');
-const {agent,vars} = require(data_path).data;
-const Deva = require('@indra.ai/deva');
+const {agent,vars} = require('./data.json').DATA;
 const DOCS = new Deva({
   info,
   agent,
@@ -39,13 +36,14 @@ const DOCS = new Deva({
     for parsing.
     ***************/
     doc(loc=false) {
+      this.action('func', 'doc');
       const docArr = loc ? loc.split(':') : [];
       const part = docArr[1] ? docArr[1].toUpperCase() : this.vars.part;
       const fDoc = docArr.length ? docArr[0] + '.feecting' : 'main.feecting';
-      const fDocs = path.join(this.config.dir, 'docs');
-      const fPath = path.join(fDocs, fDoc);
+      const fDocs = this.path.join(this.config.dir, 'docs');
+      const fPath = this.path.join(fDocs, fDoc);
       try {
-        let doc = fs.readFileSync(fPath, 'utf8');
+        let doc = this.fs.readFileSync(fPath, 'utf8');
         if (part) doc = doc.split(`::BEGIN:${part}`)[1].split(`::END:${part}`)[0];
         return doc;
       }
@@ -62,22 +60,25 @@ const DOCS = new Deva({
     a document from the text parameter.
     ***************/
     view(packet) {
-      this.context('view');
+      this.context('view', packet.q.text);
+      this.action('method', `view:${packet.q.text}`);
       const agent = this.agent();
       return new Promise((resolve, reject) => {
+        this.state('get', packet.q.text);
         const doc = this.func.doc(packet.q.text);
-        this.question(`#feecting parse:${agent.key} ${doc}`).then(feecting => {
+        this.question(`${this.askChr}feecting parse ${doc}`).then(feecting => {
+          this.state('resolve', `view:${packet.q.text}`);
           return resolve({
             text: feecting.a.text,
             html: feecting.a.html,
             data: feecting.a.data,
           });
         }).catch(err => {
+          this.context('reject', `view:${packet.q.text}`);
           return this.error(err, packet, reject);
         })
       });
     },
-
     /**************
     method: raw
     params: packet
@@ -85,13 +86,16 @@ const DOCS = new Deva({
     a document from the text parameter.
     ***************/
     raw(packet) {
-      this.context('raw')
+      this.context('raw', packet.q.text);
+      this.action('method', `raw:${packet.q.text}`);
       const agent = this.agent();
       return new Promise((resolve, reject) => {
         try {
           const text = this.func.doc(packet.q.text);
-          return resolve({text})
+          this.state('resolve', `raw:${packet.q.text}`)
+          return resolve(text)
         } catch (e) {
+          this.state('reject', `raw:${packet.q.text}`);
           return this.error(e, packet, reject);
         }
       });
