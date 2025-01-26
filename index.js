@@ -1,4 +1,4 @@
-// Copyright (c)2023 Quinn Michaels
+// Copyright (c)2025 Quinn Michaels
 // The Docs Deva
 const Deva = require('@indra.ai/deva');
 const package = require('./package.json');
