@@ -33,7 +33,7 @@ const DOCS = new Deva({
     /**************
     func: view
     params: opts
-    describe: The view function parses the text parameter to prdoce the string
+    describe: The view function parses the text parameter to produce the string
     which calls the correct document file then passes it to the feecting deva
     for parsing.
     ***************/
@@ -84,8 +84,9 @@ const DOCS = new Deva({
     /**************
     method: raw
     params: packet
-    describe: The raw method replays the request to the view function to return
-    a document from the text parameter.
+    describe: The raw method replays the request to the 
+    view function to return a document from the text 
+    parameter.
     ***************/
     raw(packet) {
       this.context('raw', packet.q.text);
