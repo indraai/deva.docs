@@ -7,6 +7,7 @@
   "copyright": "(c) 2025 Quinn Michaels",
   "description": "The Docs Deva",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +29,6 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.2.22"
+    "@indra.ai/deva": "^1.2.36"
   }
 }
