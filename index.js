@@ -42,15 +42,15 @@ const DOCS = new Deva({
     which calls the correct document file then passes it to the feecting deva
     for parsing.
     ***************/
-    doc(loc=false) {
+    doc(opts) {
       this.action('func', 'doc');
-      const docArr = loc ? loc.split(':') : [];
-      const part = docArr[1] ? docArr[1].toUpperCase() : this.vars.part;
-      const fDoc = docArr.length ? docArr[0] + '.feecting' : 'main.feecting';
-      const fDocs = this.path.join(this.config.dir, 'docs');
-      const fPath = this.path.join(fDocs, fDoc);
+      const {text, meta} = opts;
+      const area = meta.params[1] ? meta.params[1] : this.vars.area;
+      const part = meta.params[2] ? meta.params[2].toUpperCase() : this.vars.part;
+      const docName = text.length ? text + '.feecting' : 'main.feecting';
+      const docPath = this.path.join(this.config.dir, area, 'docs', docName);
       try {
-        let doc = this.fs.readFileSync(fPath, 'utf8');
+        let doc = this.fs.readFileSync(docPath, 'utf8');
         if (part) doc = doc.split(`::BEGIN:${part}`)[1].split(`::END:${part}`)[0];
         return doc;
       }
@@ -67,12 +67,13 @@ const DOCS = new Deva({
     a document from the text parameter.
     ***************/
     view(packet) {
+      
       this.context('view', packet.q.text);
       this.action('method', `view:${packet.q.text}`);
       const agent = this.agent();
       return new Promise((resolve, reject) => {
         this.state('get', packet.q.text);
-        const doc = this.func.doc(packet.q.text);
+        const doc = this.func.doc(packet.q);
         this.question(`${this.askChr}feecting parse ${doc}`).then(feecting => {
           this.state('resolve', `view:${packet.q.text}`);
           return resolve({
