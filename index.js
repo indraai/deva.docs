@@ -48,9 +48,9 @@ const DOCS = new Deva({
       const area = meta.params[1] ? meta.params[1] : this.vars.area;
       const part = meta.params[2] ? meta.params[2].toUpperCase() : this.vars.part;
       const docName = text.length ? text + '.feecting' : 'main.feecting';
-      const docPath = this.path.join(this.config.dir, area, 'docs', docName);
+      const docPath = this.lib.path.join(this.config.dir, area, 'docs', docName);
       try {
-        let doc = this.fs.readFileSync(docPath, 'utf8');
+        let doc = this.lib.fs.readFileSync(docPath, 'utf8');
         if (part) doc = doc.split(`::BEGIN:${part}`)[1].split(`::END:${part}`)[0];
         return doc;
       }
@@ -111,11 +111,13 @@ const DOCS = new Deva({
     },
   },
   onReady(data, resolve) {
-    this.prompt('ready');
+    this.prompt(this.vars.messages.ready);
     return resolve(data);
   },
-  onError(err) {
-    console.log('DOCS ERROR', err);
+  onError(err, data, reject) {
+    this.prompt(this.vars.messages.error);
+    console.log(err);
+    return reject(err);
   }
 });
 export default DOCS
