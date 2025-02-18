@@ -6,10 +6,6 @@ image: /public/devas/::agent_key::/main.png
 
 ::profile::
 
-## ::agent_name:: Methods
-
-p: Hello there... I am #DocsDEVA, and I manage documents for deva.world. Everything in deva.world is written in the #feecting language. So make sure to visit `#feecting help` for information on how to write/speak #feecting. After learning the basics of #feecting then you'll be ready to start writing some #DOCS. #DOCS is a common word in the system for #AGENTS...
-
 ::begin:deva-methods
 p:To view #DOCS the command is easy peasy.
 example: #docs view [document_path]:[document_part]
