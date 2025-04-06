@@ -1,10 +1,6 @@
-::begin:center
-image: /public/devas/::agent_key::/main.png
-::end:center
-
 # ::agent_name::
 
-::profile::
+::agent_profile::
 
 ::begin:deva-methods
 p:To view #DOCS the command is easy peasy.
@@ -19,11 +15,15 @@ example: #docs view main:global
 
 ---
 
-talk:#docs view devas/main:security
+talk: #security file:public main:header
+talk: #algorithm file:public main:header
+
+copyright: (c)2025 Quinn Michaels
+
 
 ---
 
-copyright: (c)2023 Quinn Michaels
+copyright: (c)2025 Quinn Michaels
 
 ::begin:hidden
 #color = ::agent_color::
