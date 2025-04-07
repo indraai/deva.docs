@@ -29,6 +29,6 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.5.7"
+    "@indra.ai/deva": "^1.5.9"
   }
 }
