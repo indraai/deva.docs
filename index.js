@@ -1,15 +1,14 @@
 // Copyright (c)2025 Quinn Michaels
 // The Docs Deva the manages the feecting documents in Deva.space, Deva.cloud, and Deva.world.
 import Deva from '@indra.ai/deva';
-import data from './data.json' with {type:'json'};
-const {agent,vars} = data.DATA;
+import pkg from './package.json' with {type:'json'};
+const {agent,vars} = pkg.data;
 
 // set the __dirname
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';    
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-import pkg from './package.json' with {type:'json'};
 const info = {
   id: pkg.id,
   name: pkg.name,
