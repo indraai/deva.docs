@@ -29,7 +29,7 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.5.35"
+    "@indra.ai/deva": "^1.5.36"
   },
   "data": {
     "agent": {
@@ -52,10 +52,11 @@
         }
       },
       "profile": {
-        "name": "#DocsDeva",
+        "name": "Docs Deva",
+        "hashtag": "#DocsDeva",
         "title": "Docs Deva",
         "subtitle": "Managing docs in Deva.world",
-        "describe": "Docs Deva responsible for managing the public and private documents in Deva.world.",
+        "describe": "Docs Deva responsible for managing the public and private documents in the system.",
         "tweet": "Docs Deva managing the public and private documents in Deva.world.",
         "hashtags": "QuinnMichaels,IndraAI,DevaWorld,DocsDeva",
         "pronouns": "He, Him",
