@@ -29,7 +29,7 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.6.63"
+    "@indra.ai/deva": "^1.6.64"
   },
   "data": {
     "agent": {
