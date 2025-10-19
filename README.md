@@ -6,4 +6,8 @@ The Docs Deva
 
 `const adv = require('@indra.ai/docsdeva')`;
 
-(c)Copyright 2023, Quinn Michaels; All Rights Reserved
+Copyright ©2025 Quinn A Michaels; All rights reserved.  
+Legal Signature Required For Lawful Use.  
+Distributed under VLA:14415279507214091167 LICENSE.md
+
+

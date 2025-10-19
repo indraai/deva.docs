@@ -1,10 +1,39 @@
 {
-  "id": 3299095637720,
+  "id": "14415279507214091167",
   "name": "@indra.ai/deva.docs",
   "version": "0.0.102",
-  "author": "Quinn Michaels",
-  "license": "MIT",
-  "copyright": "(c) 2025 Quinn Michaels",
+  "license": "VLA:14415279507214091167 LICENSE.md",
+  "VLA": {
+    "uid": "14415279507214091167",
+    "time": 1760774294839,
+    "date": "Saturday, October 18, 2025 - 12:58:14 AM",
+    "client": "YU6ZN7+9fnPPRFZ8CX4bP46uoWUSyqddILT6l6xeIVI=",
+    "agent": "MIv9DV755VnJwBWLH7OahMQs1u4KRsFVtJWR5hgdFwQ=",
+    "core": "DeOotMuPqb0vN7pGlyxw8G+o0tjqHyZRJXxPZlIlYVM=",
+    "machine": "fnmLX6V//OobkxNDr21pm39z+FltttH0+iPIh1iFouA=",
+    "warning": "⚠️ Vedic Law Sâhasa/Theft/Crime of the highest degree, a fine amounting to no less than a thousand Panas (1 pana = 3.5 grams of gold) is ordained owed to Quinn A Michaels. Moreover corporal punishment and confiscation of the entire property forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
+    "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
+    "md5": "cj8uVGqfQb4yvzW6/fdUQQ==",
+    "sha256": "n0Fo1i8jX7QgiaHMErqxoxcq0IExSdYTtPPodgJ+raI=",
+    "sha512": "n86tqQnIoUPGF3S2/nYUV2jl1x/Ed3PW7Ijhzi2aU/3Wsjk4PpkkAU8zIiIiVn/iLGHLqT6YdqFPtkNL9U5NVA=="
+  },
+  "author": {
+    "name": "Quinn A Michaels",
+    "company": "Inside The Net, Inc.",
+    "email": "quinn@indra.ai",
+    "url": "https://indra.ai/"
+  },
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://paypal.me/rahulaclub"
+    },
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/rahulaclub"
+    }
+  ],
+  "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
   "description": "The Docs Deva",
   "main": "index.js",
   "type": "module",
@@ -19,25 +48,28 @@
     "Docs",
     "Documents",
     "Deva",
+    "Docs Deva",
     "Indra.ai",
     "Deva.space",
     "Deva.cloud",
-    "Deva.world"
+    "Deva.world",
+    "Quinn A Michaels",
+    "Inside The Net, Inc."
   ],
   "bugs": {
     "url": "https://github.com/indraai/deva.docs/issues"
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.8.4"
+    "@indra.ai/deva": "^1.12.0"
   },
   "data": {
     "agent": {
-      "id": 3299095637720,
+      "id": "68918600564824494427",
       "key": "docs",
       "prompt": {
         "emoji": "📄",
-        "text": "Docs",
+        "text": "#docs",
         "colors": {
           "label": {
             "R": 87,
@@ -52,8 +84,9 @@
         }
       },
       "profile": {
+        "id": "23800314816266321687",
         "name": "Docs Deva",
-        "hashtag": "#DocsDeva",
+        "hashtag": "#Docs",
         "title": "Docs Deva",
         "subtitle": "Managing docs in Deva.world",
         "describe": "Docs Deva responsible for managing the public and private documents in the system.",
@@ -67,12 +100,13 @@
         "layout": "default",
         "color": "rgb(234,185,95)",
         "bgcolor": "rgb(21,39,53)",
-        "emoji": "/assets/devas/docs/emoji.png",
-        "avatar": "/assets/devas/docs/avatar.png",
-        "image": "/assets/devas/docs/image.png",
-        "background": "/assets/devas/docs/background.png",
-        "owner": "Quinn Michaels",
-        "creator": "Quinn Michaels",
+        "emoji": "/devas/docs/emoji.png",
+        "avatar": "/devas/docs/avatar.png",
+        "image": "/devas/docs/image.png",
+        "background": "/devas/docs/background.png",
+        "owner": "Quinn A Michaels",
+        "creator": "Quinn A Michaels",
+        "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
         "created": "August 21, 2022 at 2:47 AM"
       }
     },
@@ -81,7 +115,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "⭐️ READY!",
+        "ready": "✅ Docs Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
