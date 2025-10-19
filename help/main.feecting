@@ -3,7 +3,7 @@
 // Distributed under VLA:14415279507214091167 LICENSE.md
 
 ::BEGIN:MAIN
-# {{profil.ename}}
+# {{profile.name}}
 
 {{profile}}
 
@@ -23,7 +23,7 @@ example: #docs view main:global
 ::begin:hidden
 #color = {{profile.color}}
 #bgcolor = {{profile.bgcolor}}
-#bg = {{profile.bg}}
+#bg = {{profile.background}}
 copyright: (c)2025 Quinn Michaels
 ::end:hidden
 ::END:MAIN
