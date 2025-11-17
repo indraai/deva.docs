@@ -61,7 +61,7 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.22.1"
+    "@indra.ai/deva": "^1.23.0"
   },
   "data": {
     "agent": {
@@ -106,7 +106,7 @@
         "background": "/devas/docs/background.png",
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
-        "warning": "⚠️ That document is said to be valid which is not adverse to the custom of the country, the contents of which answer to the rules regarding pledges and other kinds of security, and which is consistent in import and language. That document is invalid which has been executed by a person intoxicated, by one charged with a crime, and that which has been caused to be written by forcible means, by intimidation, or by deception. If a doubt should subsist, as to whether a certain document be authentic or fabricated, its authenticity has to be established by examining the handwriting of the party, the tenour of the document, peculiar marks, circumstantial evidence, and the probabilities of the case. If a document is split, or torn, or stolen, or effaced, or lost, or badly written, another document has to be executed. This is the rule regarding documents.",
+        "warning": "⚠️ That document is said to be valid which is not adverse to the custom of the country and which is consistent in import and language. That document is invalid which has been executed by a person intoxicated, charged with a crime, and that which has been caused to be written by forcible means, intimidation, coercion, or deception. Authenticity has to be established by examining the handwriting, the tenour of the document, peculiar marks, surrounding evidence, and the probabilities of the case.",
         "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
         "created": "August 21, 2022 at 2:47 AM"
       }
