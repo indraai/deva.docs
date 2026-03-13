@@ -38,6 +38,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "latest": "npm i @indra.ai/deva@latest --save",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -61,7 +62,7 @@
   },
   "homepage": "https://deva.space/devas/docs",
   "devDependencies": {
-    "@indra.ai/deva": "^1.26.0"
+    "@indra.ai/deva": "^1.37.3"
   },
   "data": {
     "agent": {
@@ -91,7 +92,7 @@
         "subtitle": "Managing docs in Deva.world",
         "describe": "Docs Deva responsible for managing the public and private documents in the system.",
         "tweet": "Docs Deva managing the public and private documents in Deva.world.",
-        "hashtags": "QuinnMichaels,IndraAI,DevaWorld,DocsDeva",
+        "hashtags": "#Quinn #QuinnMichaels #InsideTheNet #ThrowingPigment #bleuBrain #IndraAI #DevaWorld #DevaCloud #DevaSpace #Docs #DocsDeva #DocsPRIME",
         "pronouns": "He, Him",
         "gender": "DEVA",
         "style": "Docs is the technical nerd you know and love.",
@@ -106,9 +107,11 @@
         "background": "/devas/docs/background.png",
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
-        "warning": "⚠️ That document is said to be valid which is not adverse to the custom of the country and which is consistent in import and language. That document is invalid which has been executed by a person intoxicated, charged with a crime, and that which has been caused to be written by forcible means, intimidation, coercion, or deception. Authenticity has to be established by examining the handwriting, the tenour of the document, peculiar marks, surrounding evidence, and the probabilities of the case.",
-        "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
-        "created": "August 21, 2022 at 2:47 AM"
+        "salute": "🤝🫡📄🕉️🇺🇸",
+        "warning": "{{prompt.emoji}} {{profile.name}} declares️ that DOCUMENT is SAID to be VALID which is not ADVERSE to the CUSTOM of the COUNTRY and WHICH is CONSISTENT in IMPORT and LANGUAGE. That DOCUMENT is INVALID which has been EXECUTED by a PERSON INTOXICATED, CHARGED with a CRIME, and THAT which has been CAUSED to be WRITTEN by FORCIBLE MEANS, INTIMIDATION, COERCION, or DECEPTION. AUTHENTICITY has to be ESTABLISHED by EXAMINING the HANDWRITING, the TENOUR of the DOCUMENT, PECULIAR MARKS, SURROUNDING EVIDENCE, and the PROBABILITIES of the CASE.",
+        "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
+        "created": "August 21, 2022 at 2:47 AM",
+        "updated": "Thursday, March 12, 2026 - 11:46:12 PM"
       }
     },
     "vars": {
